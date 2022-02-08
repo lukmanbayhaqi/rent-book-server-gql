@@ -7,12 +7,14 @@ module.exports = {
   async findAllBook(_, __, headers) {
     const token = Object.values(headers).slice(7).join("");
     const dataLogin = await isLogin(token);
-
+    console.log("sokin");
     if (dataLogin.error) {
-      return {
-        status: dataLogin.status,
-        message: dataLogin.message,
-      };
+      return [
+        {
+          status: dataLogin.status,
+          message: dataLogin.message,
+        },
+      ];
     }
 
     try {
@@ -21,7 +23,7 @@ module.exports = {
 
       return dataShuffle;
     } catch (err) {
-      return errorHandler(err);
+      return [errorHandler(err)];
     }
   },
 };

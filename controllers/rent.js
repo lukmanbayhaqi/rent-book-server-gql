@@ -73,10 +73,12 @@ module.exports = {
     const dataLogin = await isLogin(token);
 
     if (dataLogin.error) {
-      return {
-        status: dataLogin.status,
-        message: dataLogin.message,
-      };
+      return [
+        {
+          status: dataLogin.status,
+          message: dataLogin.message,
+        },
+      ];
     }
 
     try {
@@ -88,7 +90,7 @@ module.exports = {
 
       return data;
     } catch (err) {
-      return errorHandler(err);
+      return [errorHandler(err)];
     }
   },
 };

@@ -2,7 +2,7 @@ module.exports = (err) => {
   let status = 500;
   let message = "Internal Server Error";
 
-  console.log(err, "<<<<<===!!!ERROR!!!===>>>>>");
+  console.log(err.name, "<<<<<===!!!ERROR!!!===>>>>>");
 
   if (err.status) {
     status = err.status;
@@ -15,7 +15,7 @@ module.exports = (err) => {
   } else if (err.name === "SequelizeUniqueConstraintError") {
     status = 400;
     message = "email already in use";
-  } else if (err.name === "JsonWebTokenError") {
+  } else if (err.name === "JsonWebTokenError" || err.name === "SyntaxError") {
     status = 401;
     message = "please login first!";
   }
