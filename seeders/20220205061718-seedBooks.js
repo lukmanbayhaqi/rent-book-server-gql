@@ -141,7 +141,7 @@ module.exports = {
           title: "A Game of Thrones (A Song of Ice and Fire, Book 1)",
           author: "George R. R. Martin",
           isbn: "9780553573404",
-          img_url:
+          image_url:
             "https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -150,7 +150,7 @@ module.exports = {
           title: "A Clash of Kings (A Song of Ice and Fire, Book 2)",
           author: "George R. R. Martin",
           isbn: "9780553579901",
-          img_url:
+          image_url:
             "https://upload.wikimedia.org/wikipedia/en/3/39/AClashOfKings.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -159,7 +159,7 @@ module.exports = {
           title: "A Storm of Swords (A Song of Ice and Fire, Book 3)",
           author: "George R. R. Martin",
           isbn: "9780553106633",
-          img_url:
+          image_url:
             "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/AStormOfSwords.jpg/220px-AStormOfSwords.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -168,7 +168,7 @@ module.exports = {
           title: "A Feast for Crows (A Song of Ice and Fire, Book 4)",
           author: "George R. R. Martin",
           isbn: "9780553801507",
-          img_url:
+          image_url:
             "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/AFeastForCrows.jpg/220px-AFeastForCrows.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -177,7 +177,7 @@ module.exports = {
           title: "A Dance with Dragons (A Song of Ice and Fire, Book 5)",
           author: "George R. R. Martin",
           isbn: "9780007455997",
-          img_url:
+          image_url:
             "https://upload.wikimedia.org/wikipedia/en/5/5d/A_Dance_With_Dragons_US.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -213,7 +213,7 @@ module.exports = {
           isbn: "9781593279509",
           title: "Eloquent JavaScript, Third Edition",
           author: "Marijn Haverbeke",
-          img_url:
+          image_url:
             "https://images-na.ssl-images-amazon.com/images/I/51InjRPaF7L._SX377_BO1,204,203,200_.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -222,7 +222,7 @@ module.exports = {
           isbn: "9781491943533",
           title: "Practical Modern JavaScript",
           author: "Nicolás Bevacqua",
-          img_url:
+          image_url:
             "https://images-na.ssl-images-amazon.com/images/I/813hbklwWBL.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -231,7 +231,7 @@ module.exports = {
           isbn: "9781593277574",
           title: "Understanding ECMAScript 6",
           author: "Nicholas C. Zakas",
-          img_url:
+          image_url:
             "https://images-na.ssl-images-amazon.com/images/I/512T+d+VK6L._SX376_BO1,204,203,200_.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -240,7 +240,7 @@ module.exports = {
           isbn: "9781449365035",
           title: "Speaking JavaScript",
           author: "Axel Rauschmayer",
-          img_url:
+          image_url:
             "https://images-na.ssl-images-amazon.com/images/I/91sXL7wrjgL.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -249,7 +249,7 @@ module.exports = {
           isbn: "9781449331818",
           title: "Learning JavaScript Design Patterns",
           author: "Addy Osmani",
-          img_url: "https://m.media-amazon.com/images/I/51H-31ivMTL.jpg",
+          image_url: "https://m.media-amazon.com/images/I/51H-31ivMTL.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
         },
@@ -257,7 +257,7 @@ module.exports = {
           isbn: "9798602477429",
           title: "You Don't Know JS Yet",
           author: "Kyle Simpson",
-          img_url: "https://m.media-amazon.com/images/I/410f-bUBR3L.jpg",
+          image_url: "https://m.media-amazon.com/images/I/410f-bUBR3L.jpg",
           createdAt: "NOW()",
           updatedAt: "NOW()",
         },
@@ -265,7 +265,7 @@ module.exports = {
           isbn: "9781484200766",
           title: "Pro Git",
           author: "Scott Chacon and Ben Straub",
-          img_url:
+          image_url:
             "https://cf.shopee.co.id/file/be29cd5226b167e24bb225f5bf24ea41",
           createdAt: "NOW()",
           updatedAt: "NOW()",
@@ -274,7 +274,7 @@ module.exports = {
           isbn: "9781484242216",
           title: "Rethinking Productivity in Software Engineering",
           author: "Caitlin Sadowski, Thomas Zimmermann",
-          img_url:
+          image_url:
             "https://andre-meyer.ch/wp-content/uploads/2019/05/cover-800x624.png",
           createdAt: "NOW()",
           updatedAt: "NOW()",
