@@ -2,6 +2,7 @@ const { User } = require("../models");
 const errorHandler = require("../middlewares/errorHandler");
 const { checkPassword } = require("../helpers/bcryptjs");
 const { createToken } = require("../helpers/jwt");
+const { AuthenticationError } = require("apollo-server");
 
 module.exports = {
   async register(_, input) {
@@ -21,7 +22,7 @@ module.exports = {
         message: `Success register ${email}`,
       };
     } catch (err) {
-      return errorHandler(err);
+      errorHandler(err);
     }
   },
   async login(_, input, c) {
@@ -48,19 +49,13 @@ module.exports = {
             status: 200,
           };
         } else {
-          return {
-            status: 400,
-            message: "invalid email / password",
-          };
+          throw new AuthenticationError("Invalid email / password");
         }
       } else {
-        return {
-          status: 400,
-          message: "invalid email / password",
-        };
+        throw new AuthenticationError("Invalid email / password");
       }
     } catch (err) {
-      return errorHandler(err);
+      errorHandler(err);
     }
   },
 };

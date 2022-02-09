@@ -7,13 +7,6 @@ module.exports = {
     const token = Object.values(headers).slice(7).join("");
     const dataLogin = await isLogin(token);
 
-    if (dataLogin.error) {
-      return {
-        status: dataLogin.status,
-        message: dataLogin.message,
-      };
-    }
-
     const BookId = input.bookId;
     const UserId = dataLogin.decoded.id;
 
@@ -31,19 +24,12 @@ module.exports = {
         message: "Success rent book",
       };
     } catch (err) {
-      return errorHandler(err);
+      errorHandler(err);
     }
   },
   async returnBook(_, input, headers) {
     const token = Object.values(headers).slice(7).join("");
     const dataLogin = await isLogin(token);
-
-    if (dataLogin.error) {
-      return {
-        status: dataLogin.status,
-        message: dataLogin.message,
-      };
-    }
 
     const { returnDate, id } = input;
 
@@ -65,21 +51,12 @@ module.exports = {
         message: "Success return book",
       };
     } catch (err) {
-      return errorHandler(err);
+      errorHandler(err);
     }
   },
   async findAllRent(_, __, headers) {
     const token = Object.values(headers).slice(7).join("");
     const dataLogin = await isLogin(token);
-
-    if (dataLogin.error) {
-      return [
-        {
-          status: dataLogin.status,
-          message: dataLogin.message,
-        },
-      ];
-    }
 
     try {
       const data = Rent.findAll({
@@ -90,7 +67,7 @@ module.exports = {
 
       return data;
     } catch (err) {
-      return [errorHandler(err)];
+      errorHandler(err);
     }
   },
 };

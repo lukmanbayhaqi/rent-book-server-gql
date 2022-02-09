@@ -2,7 +2,7 @@ module.exports = (err) => {
   let status = 500;
   let message = "Internal Server Error";
 
-  console.log(err.name, "<<<<<===!!!ERROR!!!===>>>>>");
+  console.log(err.message, "<<<<<===!!!ERROR!!!===>>>>>");
 
   if (err.status) {
     status = err.status;
@@ -18,11 +18,9 @@ module.exports = (err) => {
   } else if (err.name === "JsonWebTokenError" || err.name === "SyntaxError") {
     status = 401;
     message = "please login first!";
+  } else if (err.message) {
+    message = err.message;
   }
 
-  return {
-    error: true,
-    status,
-    message,
-  };
+  throw new Error(message);
 };

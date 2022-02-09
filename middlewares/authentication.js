@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const { verifyToken } = require("../helpers/jwt");
 const errorHandler = require("../middlewares/errorHandler");
+const { AuthenticationError } = require("apollo-server");
 
 module.exports = {
   async isLogin(token) {
@@ -16,14 +17,10 @@ module.exports = {
           decoded: data,
         };
       } else {
-        return {
-          error: true,
-          status: 404,
-          message: "user not found",
-        };
+        throw new AuthenticationError("User not found, please login again");
       }
     } catch (err) {
-      return errorHandler(err);
+      errorHandler(err);
     }
   },
 };
