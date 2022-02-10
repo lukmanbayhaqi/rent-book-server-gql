@@ -11,6 +11,17 @@ module.exports = {
     const UserId = dataLogin.decoded.id;
 
     try {
+      const dataRent = await Rent.findOne({
+        where: {
+          UserId,
+          BookId,
+        },
+      });
+
+      if (dataRent) {
+        throw new Error("You've already rent this book!");
+      }
+
       const data = await Rent.create({
         BookId,
         UserId,
@@ -34,14 +45,9 @@ module.exports = {
     const { returnDate, id } = input;
 
     try {
-      const _ = await Rent.update(
-        {
-          returnDate,
-        },
-        {
-          where: { id },
-        }
-      );
+      const _ = await Rent.destroy({
+        where: { id },
+      });
 
       return {
         id,
@@ -59,8 +65,8 @@ module.exports = {
     const dataLogin = await isLogin(token);
 
     try {
-      const data = Rent.findAll({
-        where: { UserId: dataLogin.decoded.id },
+      const data = await Rent.findAll({
+        where: { UserId: dataLogin.decoded.id, returnDate: null },
         include: [User, Book],
         order: [["id", "ASC"]],
       });

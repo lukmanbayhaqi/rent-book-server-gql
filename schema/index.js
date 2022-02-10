@@ -29,6 +29,7 @@ const typeDefs = gql`
     returnDate: String
     status: Int
     message: String
+    Book: Books
   }
 
   type Query {
